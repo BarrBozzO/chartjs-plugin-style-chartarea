@@ -1,0 +1,33 @@
+/* chartjs-plugin-style-chartarea | Constantine Ovchinnikov | MIT License | https://github.com/BarrBozz/chartjs-plugin-title-click/blob/master/LICENSE */
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+},{}],2:[function(require,module,exports){
+var Chart = require("chartjs");
+
+function beforeDraw(chart) {
+  var opts = chart.options;
+  if (opts.chartArea && opts.chartArea.backgroundColor) {
+    var ctx = chart.ctx;
+    var chartArea = chart.chartArea;
+    var bgColor = opts.chartArea.backgroundColor;
+
+    ctx.save();
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(
+      chartArea.left,
+      chartArea.top,
+      chartArea.right - chartArea.left,
+      chartArea.bottom - chartArea.top
+    );
+    ctx.restore();
+  }
+}
+
+var StyleChartAreaPlugin = {
+  beforeDraw: beforeDraw,
+};
+
+module.exports = StyleChartAreaPlugin;
+Chart.plugins.register(StyleChartAreaPlugin);
+
+},{"chartjs":1}]},{},[2]);

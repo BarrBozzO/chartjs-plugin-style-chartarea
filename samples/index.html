@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart JS Plugin Sample</title>
+    <script src="../dist/chartjs-plugin-style-chartarea.min.js"></script>
+  </head>
+  <body>
+    <div class="chart-container">
+      <canvas id="chart" width="600" height="400"></canvas>
+    </div>
+    <script type="text/javascript">
+      window.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          var chartCanvas = document.getElementById("chart");
+
+          var chart = new Chart(chartCanvas, {
+            type: "bar",
+            data: {
+              labels: ["NYC", "London", "Moscow"],
+              datasets: [
+                {
+                  label: "Population",
+                  data: [12, 19, 3],
+                },
+              ],
+            },
+            options: {
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                  },
+                ],
+              },
+              chartArea: {
+                backgroundColor: "rgba(255,0,0,0.1)",
+              },
+            },
+          });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

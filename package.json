@@ -1,0 +1,36 @@
+{
+  "name": "chartjs-plugin-style-chartarea",
+  "version": "0.1.0",
+  "description": "Chart js plugin to style chart area",
+  "main": "./dist/chartjs-plugin-style-chartarea.min.js",
+  "scripts": {
+    "prepublishOnly": "gulp build"
+  },
+  "keywords": [
+    "chartjs",
+    "plugin",
+    "chartarea"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Constantine <barr.develop@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.5.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-insert": "^0.5.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.3"
+  },
+  "peerDependencies": {
+    "chart.js": "^2.9.3"
+  }
+}
