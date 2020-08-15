@@ -11,7 +11,7 @@ var outDir = "./dist";
 
 gulp.task("build", function () {
   var build = browserify("./src/index.js")
-    // .ignore("chart.js")
+    .ignore("chart.js")
     .bundle()
     .pipe(source("index.js"))
     .pipe(buffer())
