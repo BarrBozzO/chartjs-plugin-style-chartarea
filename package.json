@@ -1,6 +1,6 @@
 {
   "name": "chartjs-plugin-style-chartarea",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Chart js plugin to style chart area",
   "main": "./dist/chartjs-plugin-style-chartarea.min.js",
   "scripts": {
